@@ -16,6 +16,7 @@ Moosic needed to automate playlist creation as manual curation couldn't scale wi
   - No missing values were present in the 10 modeling features.
   - Features were scaled using `RobustScaler` rather than `StandardScaler`, since several features (`loudness`, `speechiness`, `instrumentalness`, `liveness`) showed strong skew and outliers that would have distorted mean/std-based scaling
 
+
 ## 🚀 Key Findings & Results
  
 - **Two-stage clustering was necessary to satisfy business constraints.** A single flat K-Means pass with a elbow value (**k=8**) produced technically sound clusters, but they ranged from ~165 to ~1,286 songs each — far too large to work as a playlist. Re-clustering each broad group individually produced **28 final playlists sized ~113–268 songs**, matching Moosic's usable playlist size range.
@@ -24,12 +25,14 @@ Moosic needed to automate playlist creation as manual curation couldn't scale wi
 - **The mathematically "best" k and the business-usable k are different numbers.** The elbow method suggests a broad structure around k=8, but Moosic needs on the order of 20–30 playlists to hit its target playlist size — hence the two-stage hierarchical design.
 - **28 playlists were mapped to 10 dominant-genre groups** for the team's review (Pop, Rock, Metal, EDM, Classical, Jazz, Hip-Hop/Rap/R&B, Latin, Indie Pop, Ambient/Acoustic) — see the picture below in Visualizations.
 
+
 ## 🛠️ Technologies Used
  
 - **Programming:** Python
 - **Libraries:** pandas,scikit-learn, seaborn.
 - **Machine Learning:** K-Means clustering (two-stage / hierarchical application), `RobustScaler`, elbow method (inertia) and silhouette score for choosing k
 - **Environment:** Google Colab
+
 
 ## 📁 Project Structure
  
@@ -47,6 +50,7 @@ moosic-playlist-clustering/
     └── 02_playlist12_sample.png       # Sample of 10 tracks from Playlist 12 (Classical / Solo Piano & Orchestral)
 ```
  
+
 ## 📈 Visualisations
  
 ![Two-stage clustering hierarchy](images/00_hierarchy_overview.png)
@@ -58,12 +62,14 @@ moosic-playlist-clustering/
 ![Playlist 12 sample](images/02_playlist12_sample.png)
 *A random sample of 10 tracks from Playlist 12 ("Classical / Solo Piano & Orchestral," 140 songs). Beethoven, Chopin, Dvořák, and Barber all land in the same cluster, and every sampled track shares the same acoustic signature: low energy, low danceability, very high acousticness — concrete evidence the prototype produces musically cohesive playlists.*
 
+ 
  ## 🔗 How to Use This Project
  
 1. **Main Analysis:** Open [`notebooks/moosic_analysis.ipynb`](notebooks/moosic_analysis.ipynb) (or the original Colab notebook) to see the full workflow: cleaning → scaling → Stage 1 clustering (k=8) → Stage 2 re-clustering per broad group → 28 labeled playlists.
 2. **Data:** The dataset is included at `data/spotify_5000_songs.csv`.
 3. **Run the Code:** Open the notebook in Google Colab or Jupyter and run all cells top to bottom.
 4. **Dependencies:** `pandas`, `scikit-learn`, `seaborn`. No special setup is required beyond a standard Python data-science environment.
+
 
 ## 💬 Discussion : Answering the Team's Core Questions
  
