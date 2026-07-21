@@ -40,11 +40,11 @@ moosic-playlist-clustering/
 │   ├── spotify_5000_songs.csv         # Raw dataset (Spotify audio features, ~5,235 songs)
 │   └── final_playlist_sizes.csv       # Recomputed size of each of the 28 final playlists
 ├── notebooks/
-│   ├── moosic_analysis.ipynb          # Main analysis notebook (cleaning, scaling, two-stage K-Means, playlist labeling)
-│   ├── moosic_analysis.py             # Same analysis as a plain script (Colab export)
-│   └── generate_report_assets.py      # Re-runs the pipeline headlessly to produce the charts below
+│   └── moosic_analysis.ipynb          # Main analysis notebook (cleaning, scaling, two-stage K-Means, playlist labeling)
 └── images/
+    ├── 00_hierarchy_overview.png      # Full two-stage clustering tree: all 8 broad clusters -> all 28 final playlists
     ├── 01_elbow_full_dataset.png      # Stage 1 elbow plot (full dataset, k=2-19)
     ├── 02_elbow_subcluster.png        # Stage 2 elbow plot (example: splitting the 1,286-song broad cluster)
     └── 03_final_playlist_sizes.png    # Final size of each of the 28 playlists vs. the 113-262 business target range
 ```
+ 
