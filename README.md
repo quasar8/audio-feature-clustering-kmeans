@@ -16,10 +16,17 @@ Moosic needed to automate playlist creation as manual curation couldn't scale wi
   - No missing values were present in the 10 modeling features.
   - Features were scaled using `RobustScaler` rather than `StandardScaler`, since several features (`loudness`, `speechiness`, `instrumentalness`, `liveness`) showed strong skew and outliers that would have distorted mean/std-based scaling
 
-# Key Findings & Results
+## Key Findings & Results
  
 - **Two-stage clustering was necessary to satisfy business constraints.** A single flat K-Means pass with a elbow value (**k=8**) produced technically sound clusters, but they ranged from ~165 to ~1,286 songs each — far too large to work as a playlist. Re-clustering each broad group individually produced **28 final playlists sized ~113–268 songs**, matching Moosic's usable playlist size range.
 - **The clusters read as musically coherent genres, not noise.** Playlist 12 (drawn from the "Classical" branch) surfaces Beethoven, Chopin, Dvořák, and Barber; Playlist 9 is dominated by doom/death metal tracks. Distinct, high-signature genres like classical and metal are separated cleanly by audio features alone.
 - **Audio features only partially substitute for human musical judgment.** They work well for genres with strong, consistent acoustic signatures (metal, classical) but blur together for genres distinguished mainly by language, lyrical content, or cultural context.
 - **The mathematically "best" k and the business-usable k are different numbers.** The elbow method suggests a broad structure around k=8, but Moosic needs on the order of 20–30 playlists to hit its target playlist size — hence the two-stage hierarchical design.
 - **28 playlists were mapped to 10 dominant-genre groups** for the team's review (Pop, Rock, Metal, EDM, Classical, Jazz, Hip-Hop/Rap/R&B, Latin, Indie Pop, Ambient/Acoustic) — see the picture below.
+
+## Technologies Used
+ 
+- **Programming:** Python
+- **Libraries:** pandas, numpy, scikit-learn, seaborn, matplotlib
+- **Machine Learning:** K-Means clustering (two-stage / hierarchical application), `RobustScaler`, elbow method (inertia) and silhouette score for choosing k
+- **Environment:** Google Colab
