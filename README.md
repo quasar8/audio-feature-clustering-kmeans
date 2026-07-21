@@ -86,4 +86,22 @@ Partially. They work well for genres with a strong, consistent acoustic signatur
 - The mathematically "best" k (via elbow/silhouette) doesn't match the business need — Moosic needs 20-30 similarly-sized playlists, not the 6-9 a pure elbow analysis would suggest, which is why a two-stage hierarchical approach was needed.
 - Cluster "meaning" still needs a human to listen and label — the algorithm finds structure, but the playlist name/story is added afterward.
 
+## 🚀 Future Work
+
+- **Additional features:** Incorporate lyric/topic embeddings, genre tags, or release era to better capture language- and culture-driven similarity that audio features miss.
+- **Alternative algorithms:** Test hierarchical clustering, Gaussian Mixture Models, or density-based methods (HDBSCAN) that don't assume evenly-sized, spherical clusters, and may need less manual re-splitting.
+
+## 👥 Team
+This project was completed as a group project.(classmates from WBS Coding School):
+- Safak Koclu
+- Volodymyr K.
+- Walter P.
+- Cletus S.
+
+## 📧 Contact
+- Name : Safak Koclu
+- Email: koclusafak@gmail.com
+- LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/safak-koclu/)
+- GitHub: [My GitHub Profile](https://github.com/quasar8)
+
 
