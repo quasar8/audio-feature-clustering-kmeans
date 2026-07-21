@@ -31,7 +31,7 @@ Moosic needed to automate playlist creation as manual curation couldn't scale wi
 - **Machine Learning:** K-Means clustering (two-stage / hierarchical application), `RobustScaler`, elbow method (inertia) and silhouette score for choosing k
 - **Environment:** Google Colab
 
-- ## 📁 Project Structure
+## 📁 Project Structure
  
 ```
 moosic-playlist-clustering/
