@@ -44,7 +44,17 @@ moosic-playlist-clustering/
 └── images/
     ├── 00_hierarchy_overview.png      # Full two-stage clustering tree: all 8 broad clusters -> all 28 final playlists
     ├── 01_elbow_full_dataset.png      # Stage 1 elbow plot (full dataset, k=2-19)
-    ├── 02_elbow_subcluster.png        # Stage 2 elbow plot (example: splitting the 1,286-song broad cluster)
-    └── 03_final_playlist_sizes.png    # Final size of each of the 28 playlists vs. the 113-262 business target range
+    └── 02_playlist12_sample.png       # Sample of 10 tracks from Playlist 12 (Classical / Solo Piano & Orchestral)
 ```
+ 
+## 📈 Visualisations
+ 
+![Two-stage clustering hierarchy](images/00_hierarchy_overview.png)
+*The full pipeline in one picture: Stage 1 splits all 5,160 songs into 8 broad K-Means clusters; Stage 2 re-clusters each broad group individually (or leaves it untouched when it's already playlist-sized) to produce the final 28 playlists, each labeled by its dominant audio-feature profile.*
+ 
+![Stage 1 elbow plot](images/01_elbow_full_dataset.png)
+*Inertia vs. number of clusters on the full, robust-scaled dataset. The curve bends around k=6-9; k=8 was chosen as the Stage 1 broad grouping to balance model simplicity with capturing distinct musical regions.*
+ 
+![Playlist 12 sample](images/02_playlist12_sample.png)
+*A random sample of 10 tracks from Playlist 12 ("Classical / Solo Piano & Orchestral," 140 songs). Beethoven, Chopin, Dvořák, and Barber all land in the same cluster, and every sampled track shares the same acoustic signature: low energy, low danceability, very high acousticness — concrete evidence the prototype produces musically cohesive playlists.*
  
