@@ -57,4 +57,28 @@ moosic-playlist-clustering/
  
 ![Playlist 12 sample](images/02_playlist12_sample.png)
 *A random sample of 10 tracks from Playlist 12 ("Classical / Solo Piano & Orchestral," 140 songs). Beethoven, Chopin, Dvořák, and Barber all land in the same cluster, and every sampled track shares the same acoustic signature: low energy, low danceability, very high acousticness — concrete evidence the prototype produces musically cohesive playlists.*
+
+ ## 🔗 How to Use This Project
  
+1. **Main Analysis:** Open [`notebooks/moosic_analysis.ipynb`](notebooks/moosic_analysis.ipynb) (or the original Colab notebook) to see the full workflow: cleaning → scaling → Stage 1 clustering (k=8) → Stage 2 re-clustering per broad group → 28 labeled playlists.
+2. **Data:** The dataset is included at `data/spotify_5000_songs.csv`.
+3. **Run the Code:** Open the notebook in Google Colab or Jupyter and run all cells top to bottom.
+4. **Dependencies:** `pandas`, `numpy`, `scikit-learn`, `seaborn`, `matplotlib`. No special setup is required beyond a standard Python data-science environment.
+
+## 💬 Discussion : Answering the Team's Core Questions
+ 
+**Are Spotify's audio features capable of identifying "similar songs" the way humans would?**
+Partially. They work well for genres with a strong, consistent acoustic signature — metal and classical music cluster cleanly and consistently. But since the features carry no information about lyrics, language, or cultural context, genres that humans distinguish primarily by those cues (e.g. Brazilian MPB vs. reggaeton vs. gospel) often blur together in the same cluster. Data that could help going forward: lyric/topic embeddings, language detection, listener co-occurrence or skip/like behavior, and genre or mood tags from other sources.
+ 
+**Is K-Means a good method for creating playlists?**
+ 
+*Pros*
+- Simple, fast, and easy to explain to a non-technical team.
+- Works very well on genres with an extreme, distinct audio signature (metal, classical).
+
+*Cons*
+- The mathematically "best" k (via elbow/silhouette) doesn't match the business need — Moosic needs 20-30 similarly-sized playlists, not the 6-9 a pure elbow analysis would suggest, which is why a two-stage hierarchical approach was needed.
+- K-Means assumes round, similarly-sized clusters and requires manually re-running/re-splitting oversized groups; it doesn't natively produce evenly-sized clusters or handle non-spherical genre boundaries.
+- Cluster "meaning" still needs a human to listen and label — the algorithm finds structure, but the playlist name/story is added afterward.
+
+
