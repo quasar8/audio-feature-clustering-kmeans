@@ -84,7 +84,6 @@ Partially. They work well for genres with a strong, consistent acoustic signatur
 
 *Cons*
 - The mathematically "best" k (via elbow/silhouette) doesn't match the business need — Moosic needs 20-30 similarly-sized playlists, not the 6-9 a pure elbow analysis would suggest, which is why a two-stage hierarchical approach was needed.
-- K-Means assumes round, similarly-sized clusters and requires manually re-running/re-splitting oversized groups; it doesn't natively produce evenly-sized clusters or handle non-spherical genre boundaries.
 - Cluster "meaning" still needs a human to listen and label — the algorithm finds structure, but the playlist name/story is added afterward.
 
 
