@@ -27,6 +27,6 @@ Moosic needed to automate playlist creation as manual curation couldn't scale wi
 ## Technologies Used
  
 - **Programming:** Python
-- **Libraries:** pandas, numpy, scikit-learn, seaborn, matplotlib
+- **Libraries:** pandas,scikit-learn, seaborn.
 - **Machine Learning:** K-Means clustering (two-stage / hierarchical application), `RobustScaler`, elbow method (inertia) and silhouette score for choosing k
 - **Environment:** Google Colab
