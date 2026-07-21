@@ -6,7 +6,7 @@ Moosic needed to automate playlist creation as manual curation couldn't scale wi
 
 ## 📊 Dataset & Sources
  
-- **Source:** Spotify API audio features (provided as `spotify_5000_songs.csv`)
+- **Source:** Spotify API audio features (provided as [`spotify_5000_songs.csv`](data/spotify_5000_songs.csv)).
 - **Size:** 5,235 songs × 18 columns raw; after removing duplicates and non-modeling columns, 5,160 unique songs × 10 audio features used for clustering.
 - **Key Features Used:** `danceability`, `energy`, `loudness`, `mode`, `speechiness`, `acousticness`, `instrumentalness`, `liveness`, `valence`, `tempo`
 - **Features dropped:** `type`, `duration_ms`, `key`, `time_signature`, `id`, `html` — these are identifiers, metadata, or fields (like `id`/`html`) that carry no musical/audio signal for clustering. `name` and `artist` are kept as the index for readability, not as model inputs.
