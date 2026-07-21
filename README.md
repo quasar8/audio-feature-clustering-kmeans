@@ -63,7 +63,7 @@ moosic-playlist-clustering/
 1. **Main Analysis:** Open [`notebooks/moosic_analysis.ipynb`](notebooks/moosic_analysis.ipynb) (or the original Colab notebook) to see the full workflow: cleaning → scaling → Stage 1 clustering (k=8) → Stage 2 re-clustering per broad group → 28 labeled playlists.
 2. **Data:** The dataset is included at `data/spotify_5000_songs.csv`.
 3. **Run the Code:** Open the notebook in Google Colab or Jupyter and run all cells top to bottom.
-4. **Dependencies:** `pandas`, `numpy`, `scikit-learn`, `seaborn`, `matplotlib`. No special setup is required beyond a standard Python data-science environment.
+4. **Dependencies:** `pandas`, `scikit-learn`, `seaborn`. No special setup is required beyond a standard Python data-science environment.
 
 ## 💬 Discussion : Answering the Team's Core Questions
  
